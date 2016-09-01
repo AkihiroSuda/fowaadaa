@@ -17,7 +17,7 @@ elif grep "BEGIN SSH2 PUBLIC KEY" /tmp/PUBKEY; then
     echo 'Registering $PUBKEY (RFC4716 format) to /root/.ssh/authorized_keys'
     ssh-keygen -i -f /tmp/PUBKEY > /root/.ssh/authorized_keys
 else
-    echo 'ERROR: bad $PUBKEY format (must be OpenSSH for RFC4716)'
+    echo 'ERROR: bad $PUBKEY format (must be OpenSSH or RFC4716)'
     exit 1
 fi
 
