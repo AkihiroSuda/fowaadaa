@@ -6,8 +6,8 @@ RUN apk update && \
   mkdir -p /root/.ssh && \
   chmod 700 /root/.ssh/
 
-ADD sshd_config /etc/ssh/sshd_config
 ADD banner /
-ADD init.sh /
+ADD *.sh /
+ADD sshd_config /etc/ssh/sshd_config
 EXPOSE 22
 CMD /init.sh

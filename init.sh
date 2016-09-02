@@ -3,7 +3,7 @@
 set -e
 cat /banner
 
-if [ x$PUBKEY = x ]; then
+if [ "x$PUBKEY" = x ]; then
     echo 'ERROR: $PUBKEY is not set!'
     echo 'Example: docker run -e PUBKEY="$(cat ~/.ssh/id_rsa.pub)" ..'
     exit 1

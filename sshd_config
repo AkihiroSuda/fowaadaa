@@ -2,4 +2,4 @@
 Banner /banner
 
 # default: none
-ForceCommand /bin/echo Fowaadaa does not allow any command execution
+ForceCommand /forcecommand.sh
