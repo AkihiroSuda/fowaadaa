@@ -1,11 +1,5 @@
-# default: .ssh/authorized_keys, .ssh/authorized_keys2
-AuthorizedKeysFile	.ssh/authorized_keys
-
 # default: none
 Banner /banner
 
 # default: none
 ForceCommand /bin/echo Fowaadaa does not allow any command execution
-
-# default: all
-AllowUsers root
