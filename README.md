@@ -1,5 +1,7 @@
 # Fowaadaa: Docker image solely for SSH port forwarding (**No command shell**)
 
+[![Build Status](https://travis-ci.org/AkihiroSuda/fowaadaa.svg?branch=master)](https://travis-ci.org/AkihiroSuda/fowaadaa)
+
 Fowaadaa provides SSH port forwarding service for Docker containers.
 
 [No command shell](https://jpetazzo.github.io/2014/06/23/docker-ssh-considered-evil/), no SCP, nor SFTP.

@@ -1,0 +1,16 @@
+sudo: required
+
+install:
+  - curl -fsSL https://experimental.docker.com/ | sh
+  - sudo docker swarm init
+  - sudo docker network create --driver overlay n1
+  - sudo docker service create --name nginx --network n1 --replicas 3 nginx
+
+script:
+  - sudo docker build -t akihirosuda/fowaadaa .
+  - ssh-keygen -f id_rsa -t rsa -N ''
+  - sudo docker service create --name fowaadaa --network n1 -e PUBKEY="$(cat id_rsa.pub)" -p 10022:22 akihirosuda/fowaadaa
+  - echo "waiting for servics" ; sleep 30
+  - ssh -f -oStrictHostKeyChecking=no -N -i id_rsa -p 10022 -L 10080:nginx:80 root@localhost
+  - curl http://localhost:10080
+  - ssh -i id_rsa -p 10022 root@localhost echo "this should fail" || true
