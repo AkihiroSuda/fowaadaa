@@ -3,3 +3,7 @@ Banner /banner
 
 # default: none
 ForceCommand /forcecommand.sh
+
+# default: no, required for ssh -R
+GatewayPorts yes
+
